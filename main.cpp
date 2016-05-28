@@ -33,7 +33,7 @@ int main(void)
     if (!glfwInit())
         exit(EXIT_FAILURE);
 
-    window = glfwCreateWindow(640, 480, "Open GL GAME_ME", NULL, NULL);
+    window = glfwCreateWindow(640, 480, "Open GL Tutorial Game in github", NULL, NULL);
 
     if (!window)
     {
