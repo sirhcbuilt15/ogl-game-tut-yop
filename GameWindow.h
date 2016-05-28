@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <GL/glut.h>
 #include <vector>
+#include "sprite.h"
 
 class GameWindow
 {
@@ -28,6 +29,7 @@ private:
 	GLuint _vertexBufferID;
 	GLuint _textureBufferID;
 	GLuint loadAndBufferImage(const char *filename);
+	Sprite *_rocket;
 
 	GLFWwindow* _window;
 

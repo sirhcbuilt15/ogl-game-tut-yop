@@ -5,7 +5,7 @@
  *      Author: chris
  */
 
-# include "GameWindow.h"
+#include "GameWindow.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #define STBI_ONLY_PNG
@@ -86,6 +86,8 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running), _he
 	glTexCoordPointer(2, GL_FLOAT, sizeof(VertexData), (GLvoid *) offsetof(VertexData, textureCoordinates) );
 
 	_textureBufferID = loadAndBufferImage("nave.png");
+
+	_rocket = new Sprite(_textureBufferID);
 }
 
 void GameWindow::render()
@@ -103,7 +105,9 @@ void GameWindow::render()
      	*/
 
 	//glColor3f(0.45f, 1.0f, 0.95f);
-	glDrawArrays(GL_QUADS, 0, 4);
+	//glDrawArrays(GL_QUADS, 0, 4);
+
+	_rocket->render();
 
    	glfwSwapBuffers(_window);
 }
